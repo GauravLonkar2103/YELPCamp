@@ -1,0 +1,25 @@
+<%-layout('layout/boilerplate.ejs')%>
+<div class="flex flex-col mt-6">
+    <div class="flex items-center flex-col">
+    <h1 class="text-3xl flex font-bold justify-center">CAMPGROUNDS</h1>
+    <p>Take a look at our Campgrounds!!!</p>
+</div>
+    <a href="/campgrounds/new" style="background-color: white;border:1px solid black;color:black;width:15rem;padding:10px;border-radius: 10px;margin-left:42vw;margin-top: 2rem;">Add A Campground</a>
+    <div class="cards grid grid-cols-1 gap-4 m-5 p-2">
+    <%for(let camp of campgrounds1){%>    
+        <a href="/campgrounds/<%=camp._id%>">
+        <div class="flex flex-col md:flex-row items-center justify-between md:justify-between bg-slate-800 p-2 rounded-lg hover:bg-slate-600 border border-slate-500">
+<div class="flex flex-col items-start bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-48 md:h-40 md:w-48 md:rounded-none md:rounded-s-lg" src="https://source.unsplash.com/collection/9046579" alt="">
+    <div class="flex flex-col justify-between p-1 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white p-1"><%=camp.title%></h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 p-1"><%=camp.location%></p>
+    </div>
+</div>
+<p align="center" class="p-2 w-80 lg:w-96 flex justify-center items-center" style="align-items: center;"><%=camp.description%></p>
+<div class="h-9 bg-green-600 p-2 text-white border border-white rounded-lg">Rating : 4.5/5</div>
+</div>
+</a>       
+    <%}%>
+</div>
+</div>

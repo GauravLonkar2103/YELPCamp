@@ -1,0 +1,23 @@
+<% layout('layout/boilerplate.ejs')%>
+
+<div class="flex justify-center mb-5">
+<div class="bg-white flex flex-col rounded-lg">
+  <img src="<%=campf.image%>" class="h-96 rounded-lg mb-4">
+  <div class="mt-2 mb-4 pl-5 pr-2" >
+    <h3 class="text-black font-bold text-2xl"><%=campf.title%></h3>
+    <p class="mt-1 text-slate-700 font-medium text-xl" style="border-bottom: 1px solid grey;"><%=campf.location%></p>
+  </div>
+  <div class="pl-5 pr-2 mb-4">
+    <ul class="text-lg text-slate-600">
+      <li class="mb-4" style="border-bottom: 1px solid grey;">Price: Rs<%=campf.price%></li>
+      <li class="mb-4" style="border-bottom: 1px solid grey;">Description:<%=campf.description%></li>
+      <li class="mb-4" style="border-bottom: 1px solid grey;">Rating:<span class="pl-1">4.5/5</span></li>
+    </ul>
+  </div>
+  <div class="flex justify-center gap-3 mb-2">
+    <a href="/campgrounds"><button class="bg-blue-700 rounded-lg p-2">Show All</button></a>
+    <a href="/campgrounds/<%=campf._id%>/update"><button class="bg-blue-700 rounded-lg p-2">Update Campground</button></a>
+    <a href="/campgrounds/<%=campf._id%>/delete"><button class="bg-blue-700 rounded-lg p-2">Delete Campground</button></a>
+  </div>
+</div>
+</div>
